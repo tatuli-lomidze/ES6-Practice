@@ -5,23 +5,16 @@ const getArray = (n) => {
       return "n length should be greater than 2.";
     }
   
-    let sum = 0;
-    let product = 1;
+    const sumFirstTwo = n.slice(0, 2).reduce((acc, val) => acc + val, 0);
   
-    for (let i = 0; i < n.length; i++) {
-      sum += n[i];
-      if (i >= 2) {
-        product *= n[i];
-      }
-    }
+    const productRest = n.slice(2).reduce((acc, val) => acc * val, 1);
   
-  
-    return [sum, product];
+    return [sumFirstTwo, productRest];
   };
   
-  const nArray = [2, 3, 4, 5]
+  const nArray = [2, 3, 4, 5];
   const result2 = getArray(nArray);
-  console.log(result2); 
+  console.log(result2);
   
   
 
